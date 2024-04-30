@@ -7,6 +7,7 @@ import com.global.cancer_detect.security.AppUserDetail;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -58,5 +59,8 @@ public class UserService implements UserDetailsService {
             });
         }
         return authorities;
+    }
+    public ResponseEntity<List<User>>findUsersByRolesName(String Rolename){
+        return ResponseEntity.ok( userRepo.findByRolesName(Rolename));
     }
 }

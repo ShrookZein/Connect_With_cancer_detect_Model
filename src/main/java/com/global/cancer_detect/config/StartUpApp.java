@@ -45,6 +45,9 @@ public class StartUpApp implements CommandLineRunner {
             userService.save(new User(null, "Ali","Mohamed", "ali@gmail.com", "123", null,userRoles,true,true,true,true));
 
             userService.save(new User(null, "Shrook","Zein", "srouk7007@gmail.com", "123", null,doctorRoles,true,true,true,true));
+            userService.save(new User(null, "Maha","Gaber", "Maha20@gmail.com", "12345678", null,doctorRoles,true,true,true,true));
+            userService.save(new User(null, "Noha","Zein", "Noha@gmail.com", "12345678", null,doctorRoles,true,true,true,true));
+            userService.save(new User(null, "Mohamed","Maher", "Mohamed50@gmail.com", "12345678", null,doctorRoles,true,true,true,true));
         }
 
     }
