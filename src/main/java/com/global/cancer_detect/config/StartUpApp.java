@@ -40,11 +40,11 @@ public class StartUpApp implements CommandLineRunner {
             Set<RoleModel>  doctorRoles = new HashSet<>();
             doctorRoles.add(roleService.findByName("doctor"));
 
-            userService.save(new User(null, "Nour","Shaheen", "nour@gmail.com", "123",null,adminRoles,true,true,true,true));
+            userService.save(new User(null, "Nour","Shaheen", "nour@gmail.com", "12345678",null,adminRoles,true,true,true,true));
 
-            userService.save(new User(null, "Ali","Mohamed", "ali@gmail.com", "123", null,userRoles,true,true,true,true));
+            userService.save(new User(null, "Ali","Mohamed", "ali@gmail.com", "12345678", null,userRoles,true,true,true,true));
 
-            userService.save(new User(null, "Shrook","Zein", "srouk7007@gmail.com", "123", null,doctorRoles,true,true,true,true));
+            userService.save(new User(null, "Shrook","Zein", "srouk7007@gmail.com", "12345678", null,doctorRoles,true,true,true,true));
             userService.save(new User(null, "Maha","Gaber", "Maha20@gmail.com", "12345678", null,doctorRoles,true,true,true,true));
             userService.save(new User(null, "Noha","Zein", "Noha@gmail.com", "12345678", null,doctorRoles,true,true,true,true));
             userService.save(new User(null, "Mohamed","Maher", "mohamed20@gmail.com", "123456789", null,doctorRoles,true,true,true,true));
