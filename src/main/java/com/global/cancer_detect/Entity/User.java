@@ -35,7 +35,7 @@ public class User {
     @JoinTable(name = "sec_user_roles",joinColumns = @JoinColumn(name = "user_id"),inverseJoinColumns = @JoinColumn(name = "role_id"))
     @OrderColumn(name = "id")
     private Set<RoleModel>roles=new HashSet<>();
-    @ManyToMany(mappedBy = "user")
+//    @ManyToMany(mappedBy = "user")
 //    @JsonIgnore
 //    --------------------------------------------------------------------------------------------------
 //    @ManyToMany()
@@ -44,7 +44,7 @@ public class User {
 //            joinColumns =@JoinColumn(name = "user_id",referencedColumnName = "id"),
 //            inverseJoinColumns = @JoinColumn(name = "appointment_id",referencedColumnName = "id"))
 ////    @OrderColumn(name = "id")
-    private Set<AppointmentModel> appointments=new HashSet<>();
+//    private Set<AppointmentModel> appointments=new HashSet<>();
 
     private boolean isEnabled;
 

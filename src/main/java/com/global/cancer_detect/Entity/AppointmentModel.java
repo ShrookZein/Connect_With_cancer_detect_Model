@@ -33,7 +33,7 @@ public class AppointmentModel {
     @JoinTable(name = "user_Appointment",
             joinColumns =@JoinColumn(name = "appointment_id",referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "user_id",referencedColumnName = "id"))
-//    @OrderColumn(name = "id")
+    @OrderColumn(name = "id")
 //    --------------------------------------------------------------------------------
 //    @ManyToMany(mappedBy = "appointments")
 ////    @JsonIgnore
