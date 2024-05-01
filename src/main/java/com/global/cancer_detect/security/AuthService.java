@@ -63,6 +63,7 @@ public class AuthService {
         return JWTResponseDto.builder()
                 .accessToken(tokenInfo.getAccessToken())
                 .refreshToken(tokenInfo.getRefreshToken())
+                .user(userRepo.findByEmail(login).get())
                 .build();
     }
 
@@ -95,6 +96,7 @@ public class AuthService {
         return JWTResponseDto.builder()
                 .accessToken(tokenInfo.getAccessToken())
                 .refreshToken(tokenInfo.getRefreshToken())
+                .user(userRepo.findByEmail(email).get())
                 .build();
     }
 
