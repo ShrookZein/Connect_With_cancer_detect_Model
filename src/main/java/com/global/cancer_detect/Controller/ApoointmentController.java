@@ -45,6 +45,14 @@ public class ApoointmentController {
     }
     @PostMapping()
     public ResponseEntity<AppointmentModel>saveAppointment(@RequestBody AppointmentRequestDTO appointmentRequestDTO){
-        return appointmentService.saveAppointment(appointmentRequestDTO.getDay(),appointmentRequestDTO.getDate(),appointmentRequestDTO.getCancle(),appointmentRequestDTO.getConfirmed(),appointmentRequestDTO.getFromm(),appointmentRequestDTO.getToo(),appointmentRequestDTO.getUserId(),appointmentRequestDTO.getDoctorId());
+        return appointmentService.saveAppointment(appointmentRequestDTO.getDay(),appointmentRequestDTO.getDate(),appointmentRequestDTO.getFromm(),appointmentRequestDTO.getToo(),appointmentRequestDTO.getUserId(),appointmentRequestDTO.getDoctorId());
+    }
+    @PutMapping("/cancle/{id}")
+    public ResponseEntity<AppointmentModel>saveAppointmentCancle(@PathVariable Long id){
+        return appointmentService.cancelAppointmentByid(id);
+    }
+    @PutMapping("/confirm/{id}")
+    public ResponseEntity<AppointmentModel>saveAppointmentConfirm(@PathVariable Long id){
+        return appointmentService.confirmAppointmentByid(id);
     }
 }

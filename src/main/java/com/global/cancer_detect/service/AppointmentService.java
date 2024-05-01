@@ -27,7 +27,7 @@ public class AppointmentService {
     public ResponseEntity<AppointmentModel> findAppointmentByid(Long id){
         return ResponseEntity.ok(appointmentRepo.getById(id));
     }
-    public ResponseEntity<AppointmentModel> saveAppointment(String day,String date,Boolean cancle,Boolean confirmed,String fromm,String too,Long userId,Long doctorId){
+    public ResponseEntity<AppointmentModel> saveAppointment(String day,String date,String fromm,String too,Long userId,Long doctorId){
         User user =userService.findById(userId);
         System.out.println(user);
         User doctor= userService.findById(doctorId);
@@ -36,7 +36,7 @@ public class AppointmentService {
         appointUserAndDoctor.add(user);
         appointUserAndDoctor.add(doctor);
         Set<AppointmentModel>appointmentModels=new HashSet<>();
-        AppointmentModel appointmentModel1=new AppointmentModel(null,day,date,cancle,confirmed,fromm,too,appointUserAndDoctor);
+        AppointmentModel appointmentModel1=new AppointmentModel(null,day,date,null,null,fromm,too,appointUserAndDoctor);
 //        AppointmentModel appointmentModel2= appointmentRepo.save(appointmentModel1);
 //        appointmentRepo.save(appointmentModel1);
 //        appointmentModels.add(appointmentRepo.getById());
@@ -48,5 +48,17 @@ public class AppointmentService {
 //        return ResponseEntity.ok(appointmentRepo.getById(appointmentModel2.getId()));
         return ResponseEntity.ok(appointmentRepo.save(appointmentModel1));
     }
+    public ResponseEntity<AppointmentModel> cancelAppointmentByid(Long id){
+        AppointmentModel appointmentModel=appointmentRepo.getById(id);
+        appointmentModel.setCancle(true);
+        return ResponseEntity.ok(appointmentRepo.save(appointmentModel));
+    }
+    public ResponseEntity<AppointmentModel> confirmAppointmentByid(Long id){
+        AppointmentModel appointmentModel=appointmentRepo.getById(id);
+        appointmentModel.setConfirmed(true);
+        return ResponseEntity.ok(appointmentRepo.save(appointmentModel));
+    }
+
+
 
 }

@@ -76,7 +76,7 @@ public class AuthService {
         else{
             Set<RoleModel> userRoles = new HashSet<>();
             userRoles.add(roleService.findByName("user"));
-            userService.save(new User(null, firstName,lastName, email, password,null,userRoles,true,true,true,true));
+            userService.save(new User(null, firstName,lastName, email, password,null,null,null,null,null,userRoles,true,true,true,true));
         }
 
         Authentication authentication = authManager.authenticate(

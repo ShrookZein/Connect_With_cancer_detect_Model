@@ -22,8 +22,8 @@ public class AppointmentModel {
     private String day;
 //    private Date date;
     private String datee;
-    private Boolean cancle;
-    private Boolean confirmed;
+    private Boolean cancle=null;
+    private Boolean confirmed=null;
 //    private String cancle;
 //    private String confirmed;
     private String fromm;

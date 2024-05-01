@@ -11,8 +11,8 @@ public class AppointmentRequestDTO {
 
     String day;
     String date;
-    Boolean cancle;
-    Boolean confirmed;
+//    Boolean cancle;
+//    Boolean confirmed;
     String fromm;
     String too;
     Long userId;

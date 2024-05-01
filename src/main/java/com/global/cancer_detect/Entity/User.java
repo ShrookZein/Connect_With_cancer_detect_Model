@@ -26,7 +26,10 @@ public class User {
     @Email
     private String email;
     private String password;
-
+    private String imageProfile;
+    private Double rate;
+    private String Location;
+    private String description;
     @OneToMany(mappedBy ="user" ,cascade = CascadeType.ALL)
     @JsonIgnore
     private Set<ImageModel>imageModels;
