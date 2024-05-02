@@ -1,8 +1,6 @@
 package com.global.cancer_detect.Controller;
 
-import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.global.cancer_detect.Entity.AppointmentModel;
-import com.global.cancer_detect.Entity.User;
 import com.global.cancer_detect.repository.AppointmentRepo;
 import com.global.cancer_detect.repository.UserRepo;
 import com.global.cancer_detect.service.AppointmentService;
@@ -13,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/v1/appointment")
@@ -38,10 +37,8 @@ public class ApoointmentController {
     //        return appointmentService.findAllAppointmentByDoctorId(id);
     }
     @GetMapping("/{id}")
-    public ResponseEntity<AppointmentModel>findAppointmentById(@PathVariable Long id){
-//        List<AppointmentModel>appointmentModels=appointmentService.findAllAppointments().getBody();
-        return appointmentService.findAppointmentByid(id);
-        //        return appointmentService.findAllAppointmentByDoctorId(id);
+    public ResponseEntity<Optional<AppointmentModel>> findAppointmentById(@PathVariable Long id){
+        return appointmentService.findAppointmentById(id);
     }
     @PostMapping()
     public ResponseEntity<AppointmentModel>saveAppointment(@RequestBody AppointmentRequestDTO appointmentRequestDTO){

@@ -3,13 +3,13 @@ package com.global.cancer_detect.service;
 import com.global.cancer_detect.Entity.AppointmentModel;
 import com.global.cancer_detect.Entity.User;
 import com.global.cancer_detect.repository.AppointmentRepo;
-import com.global.cancer_detect.repository.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 @Service
@@ -24,8 +24,8 @@ public class AppointmentService {
     public ResponseEntity<List<AppointmentModel>> findAllAppointments(){
         return ResponseEntity.ok(appointmentRepo.findAll());
     }
-    public ResponseEntity<AppointmentModel> findAppointmentByid(Long id){
-        return ResponseEntity.ok(appointmentRepo.getById(id));
+    public ResponseEntity<Optional<AppointmentModel>> findAppointmentById(Long id){
+        return ResponseEntity.ok(appointmentRepo.findById(id));
     }
     public ResponseEntity<AppointmentModel> saveAppointment(String day,String date,String fromm,String too,Long userId,Long doctorId){
         User user =userService.findById(userId);
