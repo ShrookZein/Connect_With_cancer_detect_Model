@@ -37,6 +37,7 @@ public class AppointmentService {
         appointUserAndDoctor.add(doctor);
         Set<AppointmentModel>appointmentModels=new HashSet<>();
         AppointmentModel appointmentModel1=new AppointmentModel(null,day,date,null,null,fromm,too,appointUserAndDoctor);
+
 //        AppointmentModel appointmentModel2= appointmentRepo.save(appointmentModel1);
 //        appointmentRepo.save(appointmentModel1);
 //        appointmentModels.add(appointmentRepo.getById());

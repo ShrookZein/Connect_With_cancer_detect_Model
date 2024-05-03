@@ -45,6 +45,7 @@ public class ImageService {
 
         //        String url = "https://jsonplaceholder.typicode.com/posts";
         String url = "http://127.0.0.1:5000/predict";
+        String url2 = "http://127.0.0.1:5000/predict2";
 //----------------------------------------------------------------------------------------------------------------------
         String jwtToken = getBearerTokenHeader().substring("Bearer ".length());
 //        System.out.println(jwtToken);
@@ -74,7 +75,13 @@ public class ImageService {
         requestHeaders.setContentType(MediaType.MULTIPART_FORM_DATA);
         HttpEntity<MultiValueMap<String, Object>> requestEntity = new HttpEntity<>(body, requestHeaders);
         RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<Object> response = restTemplate.exchange(url, HttpMethod.POST, requestEntity, Object.class);
+        ResponseEntity<Object> response ;
+        if(typeModel==1){
+             response = restTemplate.exchange(url, HttpMethod.POST, requestEntity, Object.class);
+        }
+        else{
+             response = restTemplate.exchange(url2, HttpMethod.POST, requestEntity, Object.class);
+        }
 //        System.out.println(response.getBody().toString());
 
 //------------------------------------------------------------------------------------------------------------------
