@@ -23,7 +23,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @NoArgsConstructor
 public class SecurityConfig  extends WebSecurityConfigurerAdapter {
 
-    String [] PUBLIC_END_POINTS = {"/api/v1/auth/login", "/api/v1/auth/refresh-token", "/api/v1/auth/logout","/api/v1/auth/signUp","/api/v1/user/role"};
+    String [] PUBLIC_END_POINTS = {"/api/v1/auth/login", "/api/v1/auth/refresh-token", "/api/v1/auth/logout","/api/v1/auth/signUp","/api/v1/user/role","/uploads/1.jpg","/uploads/2.jpg","/uploads/3.jpg","/uploads/4.jpg"};
     @Autowired
     private UserDetailsService userDetailsService;
 

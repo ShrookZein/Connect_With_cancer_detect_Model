@@ -44,10 +44,10 @@ public class StartUpApp implements CommandLineRunner {
 
             userService.save(new User(null, "Ali","Mohamed", "ali@gmail.com", "12345678",null,null,null,null, null,userRoles,true,true,true,true));
 
-            userService.save(new User(null, "Shrook","Zein", "srouk7007@gmail.com", "12345678","http://localhost:8080/uploads/1.jpg",4.0,"Egypt","fhhfdjfjdghdghjj", null,doctorRoles,true,true,true,true));
-            userService.save(new User(null, "Maha","Gaber", "Maha20@gmail.com", "12345678","http://localhost:8080/uploads/2.jpg",5.0,"Egypt","hdhfhhdhfhdhfhhdjxjsjd", null,doctorRoles,true,true,true,true));
-            userService.save(new User(null, "Noha","Zein", "Noha@gmail.com", "12345678","http://localhost:8080/uploads/3.jpg",4.5,"Egypt","kjdfvjfjsfkjvhskfhvksfhks", null,doctorRoles,true,true,true,true));
-            userService.save(new User(null, "Mohamed","Maher", "mohamed20@gmail.com", "123456789","http://localhost:8080/uploads/4.jpg",5.0,"Egypt","sdfjsargfjwrgfrkjrfsfnnnfdnnf", null,doctorRoles,true,true,true,true));
+            userService.save(new User(null, "Shrook","Zein", "srouk7007@gmail.com", "12345678","http://localhost:8082/uploads/1.jpg",4.0,"Egypt","fhhfdjfjdghdghjj", null,doctorRoles,true,true,true,true));
+            userService.save(new User(null, "Maha","Gaber", "Maha20@gmail.com", "12345678","http://localhost:8082/uploads/2.jpg",5.0,"Egypt","hdhfhhdhfhdhfhhdjxjsjd", null,doctorRoles,true,true,true,true));
+            userService.save(new User(null, "Noha","Zein", "Noha@gmail.com", "12345678","http://localhost:8082/uploads/3.jpg",4.5,"Egypt","kjdfvjfjsfkjvhskfhvksfhks", null,doctorRoles,true,true,true,true));
+            userService.save(new User(null, "Mohamed","Maher", "mohamed20@gmail.com", "123456789","http://localhost:8082/uploads/4.jpg",5.0,"Egypt","sdfjsargfjwrgfrkjrfsfnnnfdnnf", null,doctorRoles,true,true,true,true));
         }
 
     }
