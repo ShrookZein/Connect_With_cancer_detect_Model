@@ -30,6 +30,10 @@ public class ApoointmentController {
     public ResponseEntity<List<AppointmentModel>>findAllAppointmentByDoctorId(@PathVariable Long id){
         return appointmentService.findAllAppointmentByDoctorId(id);
     }
+//    @GetMapping("/userId/{id}")
+//    public ResponseEntity<List<AppointmentModel>>findAllAppointmentByDoctorId(@PathVariable Long id){
+//        return appointmentService.findAllAppointmentByDoctorId(id);
+//    }
     @GetMapping()
     public ResponseEntity<List<AppointmentModel>>findAllAppointments(){
 //        List<AppointmentModel>appointmentModels=appointmentService.findAllAppointments().getBody();

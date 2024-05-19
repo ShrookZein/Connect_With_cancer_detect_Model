@@ -9,4 +9,5 @@ import java.util.List;
 @Repository
 public interface AppointmentRepo extends JpaRepository<AppointmentModel,Long>{
     List<AppointmentModel>findByUserId(Long id);
+    List<AppointmentModel>findByUserIdAndUserRolesName(Long userId,String UserRolesName);
 }

@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.util.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Data
@@ -37,7 +38,7 @@ public class AppointmentModel {
 //    --------------------------------------------------------------------------------
 //    @ManyToMany(mappedBy = "appointments")
 ////    @JsonIgnore
-    private Set<User> user=new HashSet<>();
+    private List<User> user;
 
 
 }

@@ -8,7 +8,9 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Data
@@ -31,13 +33,13 @@ public class User {
     private String Location;
     private String description;
     @OneToMany(mappedBy ="user" ,cascade = CascadeType.ALL)
-    @JsonIgnore
-    private Set<ImageModel>imageModels;
+//    @JsonIgnore
+    private List<ImageModel>imageModels;
     @ManyToMany(fetch = FetchType.EAGER)
 //    @JsonIgnore
     @JoinTable(name = "sec_user_roles",joinColumns = @JoinColumn(name = "user_id"),inverseJoinColumns = @JoinColumn(name = "role_id"))
     @OrderColumn(name = "id")
-    private Set<RoleModel>roles=new HashSet<>();
+    private List<RoleModel> roles;
 //    @ManyToMany(mappedBy = "user")
 //    @JsonIgnore
 //    --------------------------------------------------------------------------------------------------

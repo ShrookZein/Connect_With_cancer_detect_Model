@@ -7,10 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 
 @Service
 public class AppointmentService {
@@ -20,6 +17,9 @@ public class AppointmentService {
     private UserService userService;
     public ResponseEntity<List<AppointmentModel>> findAllAppointmentByDoctorId(Long id){
         return ResponseEntity.ok(appointmentRepo.findByUserId(id));
+    }
+    public ResponseEntity<List<AppointmentModel>> findAllAppointmentByUserIdAndRoleName(Long id){
+        return ResponseEntity.ok(appointmentRepo.findByUserIdAndUserRolesName(id,"doctor"));
     }
     public ResponseEntity<List<AppointmentModel>> findAllAppointments(){
         return ResponseEntity.ok(appointmentRepo.findAll());
@@ -32,7 +32,7 @@ public class AppointmentService {
         System.out.println(user);
         User doctor= userService.findById(doctorId);
         System.out.println(doctor);
-        Set<User>appointUserAndDoctor=new HashSet<>();
+        List<User>appointUserAndDoctor=new ArrayList<>();
         appointUserAndDoctor.add(user);
         appointUserAndDoctor.add(doctor);
         Set<AppointmentModel>appointmentModels=new HashSet<>();

@@ -2,10 +2,7 @@ package com.global.cancer_detect.security;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
-import java.util.HashSet;
-import java.util.Optional;
-import java.util.Set;
-import java.util.UUID;
+import java.util.*;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -74,7 +71,7 @@ public class AuthService {
 //            return ResponseEntity.badRequest();
         }
         else{
-            Set<RoleModel> userRoles = new HashSet<>();
+            List<RoleModel> userRoles = new ArrayList<>();
             userRoles.add(roleService.findByName("user"));
             userService.save(new User(null, firstName,lastName, email, password,null,null,null,null,null,userRoles,true,true,true,true));
         }
