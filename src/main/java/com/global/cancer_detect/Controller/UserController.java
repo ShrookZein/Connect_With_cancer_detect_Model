@@ -13,7 +13,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/v1/user")
 //اشغلو لما ارن الفرونت
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin()
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserController {

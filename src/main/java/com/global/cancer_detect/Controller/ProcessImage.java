@@ -14,7 +14,7 @@ import java.io.IOException;
 @RestController
 @RequestMapping("/image")
 //اشغلو لما ارن الفرونت
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin()
 @AllArgsConstructor
 @NoArgsConstructor
 public class ProcessImage {
